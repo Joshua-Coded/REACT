@@ -1,0 +1,25 @@
+.container {
+    padding: 16px;
+    margin: auto;
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin-top: 200px;
+    margin-left: 170px;
+    height: 100vh;
+    /* background-color: rgb(44, 24, 24); */
+
+  }
+
+.header {
+    
+ font-size: 20px; 
+}
+
+.clickme {
+    padding: 8px;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 14px;
+    background-color: white;
+    color: lightslategray;
+}
