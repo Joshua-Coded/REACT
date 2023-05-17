@@ -1,12 +1,12 @@
 import { Component } from "react";
 import "./Navbar.css";
-export class Navbar extends Component {
+export default class Navbar extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg bg-dark bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/#">
               Kigalihomes
             </a>
             <button
@@ -26,22 +26,22 @@ export class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <a className="nav-link active" aria-current="page" href="/#">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     Campgrounds
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     Login
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     Register
                   </a>
                 </li>
