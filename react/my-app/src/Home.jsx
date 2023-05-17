@@ -3,10 +3,11 @@ import { getFullYear } from "./utils";
 import "./Home.css";
 
 export default class MainContent extends Component {
+  state = { appTitle: "KigaliHomes" };
   render() {
     return (
       <div className="container">
-        <h1 className="header">KigaliHomes</h1>
+        <h1 className="header">{this.state.appTitle}</h1>
         <p className="paragraph">
           Welcome to KigaliHomes!
           <br />
