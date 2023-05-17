@@ -1,5 +1,20 @@
 .navbar {
     background-color: grey;
-    /* color: white; */
+    color: white;
 }
 
+.container-fluid a {
+    color: white;
+}
+
+.container-fluid .navbar-toggler {
+    background-color: white;
+}
+
+.container-fluid  .navbar-toggler-icon {
+     color:  grey;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
