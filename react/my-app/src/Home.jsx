@@ -3,11 +3,18 @@ import { getFullYear } from "./utils";
 import "./Home.css";
 
 export default class MainContent extends Component {
-  state = { appTitle: "KigaliHomes" };
+  state = { appTitle: "KigaliHomes", userCount: 10 };
   render() {
     return (
       <div className="container">
-        <h1 className="header">{this.state.appTitle}</h1>
+        <h1 className="header">
+          {this.state.appTitle}
+          <span> {this.state.userCount} </span>
+        </h1>
+        <button className="btn btn-info" onClick={this.onRefreshClick()}>
+          Refresh
+        </button>
+
         <p className="paragraph">
           Welcome to KigaliHomes!
           <br />
@@ -20,5 +27,9 @@ export default class MainContent extends Component {
         </div>
       </div>
     );
+  }
+
+  onRefreshClick() {
+    console.log("onRefreshClick");
   }
 }
