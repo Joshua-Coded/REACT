@@ -29,7 +29,7 @@ export default class MainContent extends Component {
     );
   }
 
-  onRefreshClick() {
-    console.log("onRefreshClick");
-  }
+  onRefreshClick = () => {
+    this.setState({ userCount: 7 });
+  };
 }
