@@ -3,7 +3,18 @@ import { getFullYear } from "./utils";
 import "./Home.css";
 
 export default class MainContent extends Component {
-  state = { appTitle: "KigaliHomes", userCount: 10 };
+  state = {
+    appTitle: "KigaliHomes",
+    userCount: 10,
+    users: [
+      { id: 1, name: "scott", phone: 434535 },
+      { id: 2, name: "smith", phone: 535242 },
+      { id: 3, name: "JACOB", phone: 34323453 },
+      { id: 4, name: "SAMUEL", phone: 7623535 },
+      { id: 5, name: "MEME", phone: 434767 },
+    ],
+  };
+
   render() {
     return (
       <div className="container">
@@ -14,6 +25,27 @@ export default class MainContent extends Component {
         <button className="btn btn-info" onClick={this.onRefreshClick()}>
           Refresh
         </button>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th> #</th>
+              <th>User Name:</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.users.map((user) => {
+              return (
+                <tr key={user.id}>
+                  <td>{user.is}</td>
+                  <td>{user.name}</td>
+                  <td>{user.phone}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
 
         <p className="paragraph">
           Welcome to KigaliHomes!
