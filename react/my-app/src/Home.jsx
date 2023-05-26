@@ -8,10 +8,10 @@ export default class MainContent extends Component {
     userCount: 10,
     users: [
       { id: 1, name: "scott", phone: 434535 },
-      { id: 2, name: "smith", phone: 535242 },
+      { id: 2, name: "smith", phone: "" },
       { id: 3, name: "JACOB", phone: 34323453 },
       { id: 4, name: "SAMUEL", phone: 7623535 },
-      { id: 5, name: "MEME", phone: 434767 },
+      { id: 5, name: "MEME", phone: "" },
     ],
   };
 
@@ -38,9 +38,15 @@ export default class MainContent extends Component {
             {this.state.users.map((user) => {
               return (
                 <tr key={user.id}>
-                  <td>{user.is}</td>
+                  <td>{user.id}</td>
                   <td>{user.name}</td>
-                  <td>{user.phone}</td>
+                  <td>
+                    {user.phone ? (
+                      user.phone
+                    ) : (
+                      <div className="bg-warning p-2">No phone number</div>
+                    )}
+                  </td>
                 </tr>
               );
             })}
