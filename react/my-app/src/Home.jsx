@@ -7,11 +7,40 @@ export default class MainContent extends Component {
     appTitle: "KigaliHomes",
     userCount: 10,
     users: [
-      { id: 1, name: "scott", phone: 434535 },
-      { id: 2, name: "smith", phone: "" },
-      { id: 3, name: "JACOB", phone: 34323453 },
-      { id: 4, name: "SAMUEL", phone: 7623535 },
-      { id: 5, name: "MEME", phone: "" },
+      {
+        id: 1,
+        name: "scott",
+        phone: 434535,
+        photo: "https://picsum.photos/id/1011/60",
+      },
+
+      {
+        id: 2,
+        name: "smith",
+        phone: "",
+        photo: "https://picsum.photos/id/1012/60",
+      },
+
+      {
+        id: 3,
+        name: "JACOB",
+        phone: 34323453,
+        photo: "https://picsum.photos/id/1013/60",
+      },
+
+      {
+        id: 4,
+        name: "SAMUEL",
+        phone: 7623535,
+        photo: "https://picsum.photos/id/1014/60",
+      },
+
+      {
+        id: 5,
+        name: "MEME",
+        phone: "",
+        photo: "https://picsum.photos/id/1015/60",
+      },
     ],
   };
 
@@ -39,6 +68,9 @@ export default class MainContent extends Component {
               return (
                 <tr key={user.id}>
                   <td>{user.id}</td>
+                  <td>
+                    <img src={user.photo} alt="" />
+                  </td>
                   <td>{user.name}</td>
                   <td>{getPhoneToRender(user.phone)}</td>
                 </tr>
