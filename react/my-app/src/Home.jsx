@@ -9,14 +9,14 @@ export default class MainContent extends Component {
     users: [
       {
         id: 1,
-        name: "scott",
+        name: "Scott",
         phone: 434535,
         photo: "https://picsum.photos/id/1011/60",
       },
 
       {
         id: 2,
-        name: "smith",
+        name: "Smith",
         phone: "",
         photo: "https://picsum.photos/id/1012/60",
       },
@@ -44,6 +44,13 @@ export default class MainContent extends Component {
     ],
   };
 
+  // user name style
+  userNameStyle = (userName) => {
+    if (userName.startsWith("S")) return { backgroundColor: "green" };
+    else if (userName.startsWith("J")) return { backgroundColor: "red" };
+    else return {};
+  };
+
   render() {
     return (
       <div className="container">
@@ -59,6 +66,7 @@ export default class MainContent extends Component {
           <thead>
             <tr>
               <th> #</th>
+              <th>Photo</th>
               <th>User Name:</th>
               <th>Phone</th>
             </tr>
@@ -71,7 +79,7 @@ export default class MainContent extends Component {
                   <td>
                     <img src={user.photo} alt="" />
                   </td>
-                  <td>{user.name}</td>
+                  <td style={this.userNameStyle(user.name)}>{user.name}</td>
                   <td>{getPhoneToRender(user.phone)}</td>
                 </tr>
               );
