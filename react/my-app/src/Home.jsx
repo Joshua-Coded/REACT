@@ -46,9 +46,9 @@ export default class MainContent extends Component {
 
   // user name style
   userNameStyle = (userName) => {
-    if (userName.startsWith("S")) return { backgroundColor: "green" };
-    else if (userName.startsWith("J")) return { backgroundColor: "red" };
-    else return {};
+    if (userName.startsWith("S")) return "green-highlight";
+    else if (userName.startsWith("J")) return "red-highlight";
+    else return "";
   };
 
   render() {
@@ -79,7 +79,7 @@ export default class MainContent extends Component {
                   <td>
                     <img src={user.photo} alt="" />
                   </td>
-                  <td style={this.userNameStyle(user.name)}>{user.name}</td>
+                  <td className={this.userNameStyle(user.name)}>{user.name}</td>
                   <td>{getPhoneToRender(user.phone)}</td>
                 </tr>
               );

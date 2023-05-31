@@ -23,3 +23,13 @@
     background-color: white;
     color: lightslategray;
 }
+
+.green-highlight {
+  color: green;
+  font-size: 40px;
+}
+
+.red-highlight {
+  color: red;
+  font-size: 25px;
+}
