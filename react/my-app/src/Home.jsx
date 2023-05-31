@@ -40,13 +40,7 @@ export default class MainContent extends Component {
                 <tr key={user.id}>
                   <td>{user.id}</td>
                   <td>{user.name}</td>
-                  <td>
-                    {user.phone ? (
-                      user.phone
-                    ) : (
-                      <div className="bg-warning p-2">No phone number</div>
-                    )}
-                  </td>
+                  <td>{getPhoneToRender(user.phone)}</td>
                 </tr>
               );
             })}
@@ -70,4 +64,11 @@ export default class MainContent extends Component {
   onRefreshClick = () => {
     this.setState({ userCount: 7 });
   };
+}
+
+function getPhoneToRender(phone) {
+  if (phone) return phone;
+  else {
+    return <div className="bg-warning p-2">No phone</div>;
+  }
 }
