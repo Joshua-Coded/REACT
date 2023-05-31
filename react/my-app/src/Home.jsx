@@ -44,13 +44,6 @@ export default class MainContent extends Component {
     ],
   };
 
-  // user name style
-  userNameStyle = (userName) => {
-    if (userName.startsWith("S")) return "green-highlight";
-    else if (userName.startsWith("J")) return "red-highlight";
-    else return "";
-  };
-
   render() {
     return (
       <div className="container">
@@ -72,14 +65,24 @@ export default class MainContent extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.users.map((user) => {
+            {this.state.users.map((user, index) => {
               return (
                 <tr key={user.id}>
                   <td>{user.id}</td>
                   <td>
                     <img src={user.photo} alt="" />
+                    <div>
+                      <button
+                        className="btn btn-sm btn-secondary"
+                        onClick={() => {
+                          this.onChangePictureClick(user, index);
+                        }}
+                      >
+                        Change Picture
+                      </button>
+                    </div>
                   </td>
-                  <td className={this.userNameStyle(user.name)}>{user.name}</td>
+                  <td>{user.name}</td>
                   <td>{getPhoneToRender(user.phone)}</td>
                 </tr>
               );
@@ -100,6 +103,12 @@ export default class MainContent extends Component {
       </div>
     );
   }
+
+  onChangePictureClick = (user, index) => {
+    const userArr = this.state.users;
+    userArr[index].photo = "";
+    this.setState({ users: userArr });
+  };
 
   onRefreshClick = () => {
     this.setState({ userCount: 7 });
